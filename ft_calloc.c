@@ -18,14 +18,14 @@ void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t n, size_t size)
 {
 	void	*str;
-
+	int i = 0 ;
 	if (n == 0 || size == 0)
 	{
 		str = malloc(0);
 		return (str);
 	}
-	if (n * size > INT_MAX)
-		return (NULL);
+	if (size > INT_MAX / n)
+	return (NULL);
 	str = malloc(n * size);
 	if (!str)
 		return (NULL);
