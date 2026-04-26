@@ -9,7 +9,7 @@
 /*   Updated: 2026/04/22 16:43:37 by cedurget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+ 
 #include <stddef.h>
 
 char	*ft_strrchr(const char *s, int c)
@@ -23,11 +23,11 @@ char	*ft_strrchr(const char *s, int c)
 	str = (char *)s;
 	while (str[i])
 	{
-		if (str[i] == c)
+		if (str[i] == (char)c)
 			tmp = i;
 		i++;
 	}
-	if (str[i] == c)
+	if (str[i] == (char)c)
 		return (str + i);
 	if (tmp >= 0)
 		return (str + tmp);

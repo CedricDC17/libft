@@ -52,5 +52,4 @@ int	main(void)
 	ft_substr(NULL, 0, 3);
 	return (0);
 }
-
 */

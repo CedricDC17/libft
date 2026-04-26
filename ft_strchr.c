@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cedurget <cedurget@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/22 13:37:32 by cedurget          #+#    #+#             */
-/*   Updated: 2026/04/22 15:50:44 by cedurget         ###   ########.fr       */
+/*   Created: 2026/04/26 17:43:00 by cedurget          #+#    #+#             */
+/*   Updated: 2026/04/26 17:43:00 by cedurget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,35 +14,40 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	*str;
-	int		i;
+	char *str;
+	int i;
 
 	i = 0;
+
 	str = (char *)s;
 	while (str[i])
 	{
-		if (str[i] == c)
+		if (str[i] == (char)c)
 			return (str + i);
 		i++;
 	}
+	if (c == 0)
+		return (str + i);
 	return (NULL);
 }
 /*
 #include <stdio.h>
 #include <string.h>
 
+
 int	main(void)
 {
-	char	*s;
-	int		c;
-	char	*ptr;
-
-	s = "hello";
-	c = 'e';
-	ptr = strchr(s, c);
-	// ptr = ft_strchr(s, c);
+	char *s;
+	// int		c;
+	char *ptr;
+	
+	s = "tripouille";
+	// c = 'e';
+	ptr = ft_strchr(s, 0);
+	printf("%s\n", ptr);
+	ptr = strchr(s, 0);
 	printf("%s\n", ptr);
 	return (0);
 }
-
+ 
 */

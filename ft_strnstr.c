@@ -20,16 +20,18 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	char	*lstr;
 
 	i = 0;
+	if (!big)
+		return (NULL);
 	bstr = (char *)big;
-	lstr = (char *)little;
-	if (!little[0])
+	if (!*little)
 		return (bstr);
-	while (i < len)
+	lstr = (char *)little;
+	while (bstr[i] && i < len)
 	{
 		if (bstr[i] == lstr[0])
 		{
 			j = 0;
-			while (bstr[i + j] == lstr[j] && ((i + j) < len))
+			while (((i + j) < len) &&bstr[i + j] == lstr[j])
 				j++;
 			if (lstr[j] == '\0')
 				return (bstr + i);
@@ -44,10 +46,12 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 //clear && cc -g -Werror -Wextra -Wall ft_strnstr.c -lbsd
 int	main(void)
 {
-	const char	*s1 = "Ces phrases sont differentes ici il me semble";
-	const char	*s2 = "ici";
-
-	printf("OG = %s\nFT = %s\n", strnstr(s1, s2, 32), ft_strnstr(s1, s2, 32));
+	// const char	*s1 = "Ces phrases sont differentes ici il me semble";
+	// const char	*s2 = "ici";
+	char * empty = (char*)"";
+	
+	printf("OG = %s\nFT = %s\n", strnstr(empty, "coucou", -1), ft_strnstr(empty, "coucou", -1));
 	return (0);
 }
+
 */

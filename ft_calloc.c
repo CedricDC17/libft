@@ -2,9 +2,12 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: cedurget <cedurget@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
+/*                                                    +:+ +:+
+	+:+     */
+/*   By: cedurget <cedurget@student.42.fr>          +#+  +:+
+	+#+        */
+/*                                                +#+#+#+#+#+
+	+#+           */
 /*   Created: 2026/04/23 13:44:48 by cedurget          #+#    #+#             */
 /*   Updated: 2026/04/23 18:10:20 by cedurget         ###   ########.fr       */
 /*                                                                            */
@@ -18,21 +21,23 @@ void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t n, size_t size)
 {
 	void	*str;
+
 	if (n == 0 || size == 0)
 	{
 		str = malloc(0);
 		return (str);
 	}
 	if (size > INT_MAX / n)
-	return (NULL);
+		return (NULL);
 	str = malloc(n * size);
 	if (!str)
 		return (NULL);
-	ft_bzero(str, n);
+	ft_bzero(str, n * size);
 	return (str);
 }
 /*
 #include <stdio.h>
+
 
 int	main(void)
 {
