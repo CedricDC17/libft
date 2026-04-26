@@ -6,7 +6,7 @@
 /*   By: cedurget <cedurget@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/26 17:40:29 by cedurget          #+#    #+#             */
-/*   Updated: 2026/04/26 20:28:56 by cedurget         ###   ########.fr       */
+/*   Updated: 2026/04/26 20:29:48 by cedurget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_itoa(int n)
 		res = -res;
 	}
 	str[i--] = '\0';
-	while (res != 0 || i == 0)
+	while (res != 0)
 	{
 		str[i--] = (res % 10) + '0';
 		res /= 10;
